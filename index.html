@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; base-uri 'self';">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>To Do</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="wallpaper" class="wallpaper"></div>
+  <div class="wallpaper-overlay"></div>
+
+  <main class="card">
+    <header class="card-header">
+      <h1>To Do</h1>
+      <div class="header-controls">
+        <button id="wallpaper-btn" type="button" class="icon-button" title="Change wallpaper" aria-label="Change wallpaper">🖼️</button>
+        <div id="theme-switcher" class="theme-switcher" role="group" aria-label="Theme">
+          <button type="button" data-theme-choice="light" title="Light" aria-label="Light theme" aria-pressed="true">☀️</button>
+          <button type="button" data-theme-choice="pastel" title="Pastel" aria-label="Pastel theme" aria-pressed="false">🌸</button>
+          <button type="button" data-theme-choice="dark" title="Dark" aria-label="Dark theme" aria-pressed="false">🌙</button>
+        </div>
+      </div>
+    </header>
+
+    <div class="progress-container">
+      <div class="progress-bar">
+        <div id="progress-fill" class="progress-fill"></div>
+      </div>
+      <p id="progress-text" class="progress-text"></p>
+    </div>
+
+    <form id="add-form">
+      <input id="new-task" type="text" placeholder="What needs doing?" autocomplete="off" aria-label="New task" maxlength="500">
+      <select id="new-priority" aria-label="Priority">
+        <option value="high">High</option>
+        <option value="medium" selected>Medium</option>
+        <option value="low">Low</option>
+      </select>
+      <input id="new-due" type="date" aria-label="Due date">
+      <button type="submit">Add</button>
+    </form>
+
+    <div class="toolbar">
+      <input id="search" type="search" placeholder="Search tasks" autocomplete="off" aria-label="Search tasks">
+      <div id="priority-filter" class="chips" role="group" aria-label="Filter by priority">
+        <button type="button" data-filter="all" aria-pressed="true">All</button>
+        <button type="button" data-filter="high" aria-pressed="false">High</button>
+        <button type="button" data-filter="medium" aria-pressed="false">Medium</button>
+        <button type="button" data-filter="low" aria-pressed="false">Low</button>
+      </div>
+    </div>
+
+    <ul id="task-list"></ul>
+    <p id="empty-message" class="empty-message" hidden></p>
+
+    <section id="completed-section" hidden>
+      <div class="completed-header">
+        <h2 id="completed-heading">Completed</h2>
+        <button id="clear-completed" type="button" class="link-button">Clear completed</button>
+      </div>
+      <ul id="completed-list"></ul>
+    </section>
+
+    <p id="summary"></p>
+  </main>
+
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden>
+    <span id="toast-text"></span>
+    <button id="toast-undo" type="button">Undo</button>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
