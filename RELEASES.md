@@ -4,6 +4,10 @@ Every change to the app is recorded here, newest first. Each entry shows the ver
 
 The first four releases were written up after the fact and no exact time was kept for them, so they show the date only.
 
+## v1.5 - 2026-09-19 16:35
+- The "To Do" heading is now a 3D crystal: a prismatic gradient face with cyan and magenta refracted layers behind it, slowly turning, with a sweeping glint. The animation stops for users who prefer reduced motion.
+- Files: index.html, style.css, RELEASES.md
+
 ## v1.4 - 2026-09-19 12:29
 - Added this release log (RELEASES.md).
 
